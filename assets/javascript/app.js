@@ -32,8 +32,7 @@
             var timeleft;
             var questionNumber = -1;
             var gameTimer;
-            //need to reset the game before starting but don't know how
-
+ 
             $("#start").on("click", function () {
                   $("#start").hide();
                   displayQuestion();
@@ -48,10 +47,21 @@
                  console.log(optionselected,rightanswer);
                 if (optionselected === rightanswer) {
                     correctCount++
+                    alert("You guessed correctly!");
                 }
-                else{
+                else if 
+                    (optionselected !== rightanswer); {
                     incorrectCount++;
+                    alert("Oh, sorry, that's not right!");
                 }
+    
+                else {       (timeleft === 0)
+                        incorrectCount++;
+                        alert("Oh, sorry, that's not right!");
+                    }
+                        }    
+    
+    
                 displayQuestion();
             });
 
@@ -77,20 +87,23 @@
             //timer
             function setup(){
                 clearInterval(gameTimer)
-                timeleft = 20
+                timeleft = 10
                 gameTimer = setInterval(timeIt, 1000);
             }  
             function timeIt() {
                     $("#timer").text(timeleft);
                         if (timeleft === 0){
-                            timeleft = 20
+                            clearInterval(gameTimer)
+                            // timeleft = 20
                         
                         }
                         else {
                             timeleft--
                         }
+
             }
 
+ 
             function displayResult(){
                 $("#questionBox").hide();
                 $("#resultsBox").append(`
