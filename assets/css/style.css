@@ -1,0 +1,34 @@
+/* start button */
+#start {
+
+}
+
+/* play again button- need position et al */
+.btn {
+
+}
+
+.MainContainer {
+    float: left;
+    width: 50%;
+    max-width: 860px;
+    margin: 0 auto;
+    clear: both;
+    background: #FFFDD0;
+  }
+
+  #timer{
+    font: bold;
+    color: black;
+    font-size: 36pt;
+          
+  }
+
+  #questionBox{
+
+  }
+
+  
+  #answerBox{
+
+  }
