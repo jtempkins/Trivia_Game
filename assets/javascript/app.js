@@ -36,7 +36,8 @@
             $("#start").on("click", function () {
                   $("#start").hide();
                   displayQuestion();
-            });
+                     setup();
+                });
 
 
 
@@ -49,19 +50,16 @@
                     correctCount++
                     alert("You guessed correctly!");
                 }
-                else if 
-                    (optionselected !== rightanswer); {
+                else if
+                (optionselected !== rightanswer) {        // removed ; from after the )   line 53
+                incorrectCount++;
+                alert("Oh, sorry, that's not right!");
+            }
+            else if(timeleft === 0){    //changed from else to else if        
                     incorrectCount++;
                     alert("Oh, sorry, that's not right!");
                 }
-    
-                else {       (timeleft === 0)
-                        incorrectCount++;
-                        alert("Oh, sorry, that's not right!");
-                    }
-                        }    
-    
-    
+ 
                 displayQuestion();
             });
 
@@ -75,7 +73,7 @@
                                 rightanswer=${questionToAsk[questionNumber].answer}>
                                 ${questionToAsk[questionNumber].options[i]}</button>`);
                      } 
-                     setup();
+                    //  setup();
                  }
                  else{
                      displayResult();
