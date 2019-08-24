@@ -1,11 +1,38 @@
+body {
+    font-family: Comic Sans MS;
+    font-size: 12px;
+    line-height: 14px;
+    color: #777777;
+    background: url("../images/background.png");
+    background-size: cover;
+
+}
+
+h1 {
+  font-family: Comic Sans MS;
+  font-size: 64pt;
+  text-align: center;
+  line-height: 14px;
+  color: #fccf03;
+
+}
+
 /* start button */
 #start {
-
+  width: 250px;
+  height: 50px;
+  background: #03cefc;
+  border-radius: 25px;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  text-align: center;
+  margin: 400px, 0px, 0px, 300px;
 }
 
 /* play again button- need position et al */
 .btn {
-
+  
 }
 
 .MainContainer {
@@ -15,20 +42,53 @@
     margin: 0 auto;
     clear: both;
     background: #FFFDD0;
+    text-align: center;
   }
 
   #timer{
     font: bold;
-    color: black;
-    font-size: 36pt;
-          
+    color: white;
+    font-size: 108pt;
+    position: absolute;
+    top: 36%;
+    left: 15%;
+        
   }
 
-  #questionBox{
+  #questionBox {
+    float: left;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    clear: both;
+    text-align: center;
+    color: #74c29b;
+    font-size: 18pt
+  }
+
+   #resultsBox {
+    float: left;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    clear: both;
+    text-align: center;
+    color: #74c29b;
+    font-size: 18pt
+
+ } 
+  #answerBox {
 
   }
 
-  
-  #answerBox{
-
+  #replay{
+    width: 250px;
+    height: 30px;
+    background: white;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    text-align: center;
+    margin: 400px, 0px, 0px, 300px;
   }

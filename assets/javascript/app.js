@@ -4,6 +4,7 @@
                     question: "What is the color of the sky?",
                     options: ["Red", "Blue", "Green", "Yellow"],
                     answer: "Blue",
+                    // img: "/assets/images/sky.jpg,
                 },
                 {
                     question: "What color are my blue socks?",
@@ -32,6 +33,7 @@
             var timeleft;
             var questionNumber = -1;
             var gameTimer;
+            var alreadyRun = false
  
             $("#start").on("click", function () {
                   $("#start").hide();
@@ -39,8 +41,7 @@
                      setup();
                 });
 
-
-
+            
             //On Click for buttons
             $("#questionBox").on("click",".options", function () {
                 var optionselected = $(this).attr("optiontext");
@@ -53,11 +54,12 @@
                 else if
                 (optionselected !== rightanswer) {        // removed ; from after the )   line 53
                 incorrectCount++;
-                alert("Oh, sorry, that's not right!");
+                alert("Oh, sorry, that's not right! The correct answer is " + rightanswer);
+                $("questionToAsk[questionNumber].img").show();
+
             }
             else if(timeleft === 0){    //changed from else to else if        
                     incorrectCount++;
-                    alert("Oh, sorry, that's not right!");
                 }
  
                 displayQuestion();
@@ -73,10 +75,11 @@
                                 rightanswer=${questionToAsk[questionNumber].answer}>
                                 ${questionToAsk[questionNumber].options[i]}</button>`);
                      } 
-                    //  setup();
+
                  }
                  else{
                      displayResult();
+     
                  }
    
             }
@@ -88,10 +91,13 @@
                 timeleft = 10
                 gameTimer = setInterval(timeIt, 1000);
             }  
+
             function timeIt() {
                     $("#timer").text(timeleft);
                         if (timeleft === 0){
                             clearInterval(gameTimer)
+                            alert("Time's Up!");
+                            displayResult();
                             // timeleft = 20
                         
                         }
@@ -101,13 +107,28 @@
 
             }
 
- 
+            $("#replay").on("click", function () {
+                 setup();   
+
+            });
+
+            $("#replay").hide();
+
             function displayResult(){
+            if (alreadyRun === false){ 
                 $("#questionBox").hide();
                 $("#resultsBox").append(`
                    <h4>Right:${correctCount}</h4>
                    <h4>Wrong:${incorrectCount}</h4>
                 `)
+                   alreadyRun = true;
+                   $("#replay").show();
+                    // if  ($("#replay").on("click", function () {
+                   (replay === true);
+                    // setup();   
+                    displayQuestion();
+
+                    };
+                }
             }
-    });
-   
+        );
